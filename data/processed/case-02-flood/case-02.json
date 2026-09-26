@@ -1,0 +1,58 @@
+{
+    "id": "case-02",
+    "title": "Ohio Floods",
+    "location": { "name": "West-Central Ohio, USA", "lat": 40.5, "lng": -84.2 },
+    "event_type": "flood",
+    "event_date": "2026-08-19",
+    "bbox": { "west": -84.8, "south": 40.0, "east": -83.6, "north": 40.9 },
+    "before": {
+      "file": "before.png",
+      "date": "2026-07-17",
+      "granule_id": "NISAR_L2_PR_GCOV_025_127_D_068_4005_DHDH_A_20260717T002543_20260717T002618_P05023_N_F_J_001"
+    },
+    "after": {
+      "file": "after.png",
+      "date": "2026-08-22",
+      "granule_id": "NISAR_L2_PR_GCOV_028_127_D_068_4005_DHDH_A_20260822T002541_20260822T002616_P05023_N_F_J_001"
+    },
+    "change": "change.png",
+    "question": "What caused this change on Earth's surface?",
+    "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
+    "correct_option": 0,
+    "hints": [
+      "Look at the widespread color shift across low-lying farmland — it isn't a sharp line like a fault or a burn scar.",
+      "This region received 4 to 7 inches of rainfall in under 24 hours, causing rivers to overflow."
+    ],
+    "story": {
+      "summary": "On August 19-20, 2026, a cluster of slow-moving thunderstorms dropped 3 to 7 inches of rain across west-central Ohio in under a day. Rivers and creeks in Auglaize, Logan, Shelby, and surrounding counties overflowed their banks, causing widespread flash flooding, road closures, and water rescues in towns like Wapakoneta and Bellefontaine.",
+      "stats": [
+        { "label": "Rainfall", "value": "Up to 7 in / 24 hrs" },
+        { "label": "Counties affected", "value": "10+" },
+        { "label": "Response", "value": "Multiple water rescues" }
+      ],
+      "nisar_insight": "NISAR's radar signal changes noticeably over saturated soil and standing water, since water reflects radar differently than dry land. This lets scientists map flood extent even under cloud cover — exactly the conditions that usually accompany heavy storms.",
+      "looking_forward": "Because NISAR can see through clouds and rain, it's especially valuable during active storm systems — when optical satellites are blind. Rapid flood-extent mapping can help emergency teams target water rescues and road closures precisely, rather than waiting for weather to clear."
+    },
+    "decision": {
+      "scenario": "You're coordinating emergency response as the floodwaters rise. Using the radar change map, where do you focus your limited water-rescue teams first?",
+      "choices": [
+        {
+          "text": "The areas showing the strongest radar signal change (likely deepest water)",
+          "feedback": "Good call. Strong radar change over farmland or low-lying areas often indicates standing water — prioritizing these zones helps target rescues where they're needed most.",
+          "best_choice": true
+        },
+        {
+          "text": "The town centers, regardless of what the radar shows",
+          "feedback": "Population centers matter, but ignoring the radar data means potentially missing flooded rural areas where people can be just as stranded — combining both is the stronger approach.",
+          "best_choice": false
+        },
+        {
+          "text": "Wait until the rain fully stops to send teams",
+          "feedback": "Waiting costs valuable time. NISAR's ability to see through clouds and rain means flood extent can be mapped while the storm is still active, enabling faster response.",
+          "best_choice": false
+        }
+      ]
+    },
+    "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
+    "caveat": "Visual comparison of quicklook images, not a validated flood extent map. The 33-day gap between the before and after acquisitions means some of the visible change may reflect normal seasonal vegetation or soil moisture shifts in addition to flood impact."
+  }

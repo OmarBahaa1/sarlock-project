@@ -2,3 +2,9 @@ data/raw/*
 !data/raw/.gitkeep
 __pycache__/
 .DS_Store
+venv/
+.env
+*.tif
+*.tiff
+*.zip
+*.h5

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SARlock - Test Case 01</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #111; color: #eee; text-align: center; padding: 20px; }
+  h1 { color: #4fc3f7; }
+  .images { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .images div { text-align: center; }
+  .images img { max-width: 350px; border: 2px solid #444; border-radius: 8px; }
+  .panel { background: #1c1c1c; max-width: 500px; margin: 20px auto; padding: 20px; border-radius: 10px; }
+  button { display: block; width: 100%; margin: 8px 0; padding: 12px; font-size: 16px;
+           background: #333; color: #eee; border: 1px solid #555; border-radius: 6px; cursor: pointer; }
+  button:hover { background: #4fc3f7; color: #111; }
+  #hint { color: #ffca28; margin-top: 10px; }
+  #story { display: none; text-align: left; }
+  #story h2 { color: #81c784; }
+  .stat { display: inline-block; background: #262626; padding: 8px 14px; margin: 5px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<h1 id="title">Loading...</h1>
+
+<div class="images">
+  <div><p>Before</p><img id="before-img" src=""></div>
+  <div><p>After</p><img id="after-img" src=""></div>
+</div>
+
+<div class="panel" id="question-panel">
+  <h3 id="question-text"></h3>
+  <div id="options"></div>
+  <div id="hint"></div>
+</div>
+
+<div class="panel" id="story" >
+  <h2>The Story</h2>
+  <p id="story-summary"></p>
+  <div id="story-stats"></div>
+  <p><em id="nisar-insight"></em></p>
+  <p style="font-size: 12px; color: #888;" id="credit"></p>
+</div>
+
+<script>
+let attempts = 0;
+
+fetch('../data/processed/case-01-earthquake/case-01.json')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('title').innerText = data.title;
+    document.getElementById('before-img').src = `../data/processed/case-01-earthquake/${data.before.file}`;
+    document.getElementById('after-img').src = `../data/processed/case-01-earthquake/${data.after.file}`;
+    document.getElementById('question-text').innerText = data.question;
+
+    const optionsDiv = document.getElementById('options');
+    data.options.forEach((opt, index) => {
+      const btn = document.createElement('button');
+      btn.innerText = opt;
+      btn.onclick = () => checkAnswer(index, data);
+      optionsDiv.appendChild(btn);
+    });
+
+    window.gameData = data;
+  })
+  .catch(err => {
+    document.getElementById('title').innerText = "Error loading case-01.json";
+    console.error(err);
+  });
+
+function checkAnswer(selectedIndex, data) {
+  const hintDiv = document.getElementById('hint');
+  if (selectedIndex === data.correct_option) {
+    document.getElementById('question-panel').style.display = 'none';
+    showStory(data);
+  } else {
+    if (attempts < data.hints.length) {
+      hintDiv.innerText = "Hint: " + data.hints[attempts];
+      attempts++;
+    } else {
+      hintDiv.innerText = "The correct answer was: " + data.options[data.correct_option];
+      document.getElementById('question-panel').style.display = 'none';
+      showStory(data);
+    }
+  }
+}
+
+function showStory(data) {
+  document.getElementById('story').style.display = 'block';
+  document.getElementById('story-summary').innerText = data.story.summary;
+  document.getElementById('nisar-insight').innerText = "NISAR Insight: " + data.story.nisar_insight;
+  document.getElementById('credit').innerText = "Data: " + data.credit;
+
+  const statsDiv = document.getElementById('story-stats');
+  data.story.stats.forEach(s => {
+    const el = document.createElement('span');
+    el.className = 'stat';
+    el.innerText = `${s.label}: ${s.value}`;
+    statsDiv.appendChild(el);
+  });
+}
+</script>
+
+</body>
+</html>

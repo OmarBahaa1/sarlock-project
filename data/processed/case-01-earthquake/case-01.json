@@ -1,0 +1,59 @@
+{
+  "id": "case-01",
+  "title": "Venezuela Earthquake",
+  "location": { "name": "Northern Coast, Venezuela", "lat": 10.44, "lng": -68.5 },
+  "event_type": "earthquake",
+  "event_date": "2026-06-24",
+  "magnitude": 7.5,
+  "bbox": { "west": -69.87367, "south": 9.5375, "east": -67.11969, "north": 12.20739 },
+  "before": {
+    "file": "before.png",
+    "date": "2026-06-17",
+    "granule_id": "NISAR_L2_PR_GCOV_023_054_D_083_4005_DHDH_A_20260617T230235_20260617T230310_P05023_N_F_J_001"
+  },
+  "after": {
+    "file": "after.png",
+    "date": "2026-06-29",
+    "granule_id": "NISAR_L2_PR_GCOV_024_054_D_083_4005_DHDH_A_20260629T230235_20260629T230309_P05023_N_F_J_001"
+  },
+  "change": "change.png",
+  "question": "What caused this change on Earth's surface?",
+  "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
+  "correct_option": 1,
+  "hints": [
+    "Look closely at the pattern — it doesn't follow a river or coastline shape.",
+    "This region sits along an active fault line on Venezuela's northern coast."
+  ],
+  "story": {
+    "summary": "On June 24, 2026, a powerful magnitude 7.5 earthquake (preceded by a magnitude 7.2 foreshock just seconds earlier) struck Venezuela's northern coast near Yumare, in Yaracuy state. The shaking was strongly felt in Caracas and caused significant damage across the Carabobo and Yaracuy regions.",
+    "stats": [
+      { "label": "Magnitude", "value": "7.5 Mw" },
+      { "label": "Depth", "value": "~20 km" },
+      { "label": "Casualties", "value": "164+ reported" }
+    ],
+    "nisar_insight": "NISAR's L-band radar can detect ground surface changes of just a few centimeters, even through cloud cover — capturing shifts in terrain caused by the earthquake that occurred days before and after the event.",
+    "looking_forward": "Because NISAR revisits the same location roughly every 12 days, early ground deformation — a warning sign before major earthquakes or aftershocks — can be tracked and used to improve early-warning systems in seismically active regions."
+  },
+  "decision": {
+    "scenario": "You're part of a disaster response team. Using the radar deformation map, you have limited resources to send rescue teams. Where do you send them first?",
+    "choices": [
+      {
+        "text": "The coastal area with the strongest signal change (highest deformation)",
+        "feedback": "Good call. Areas with the strongest radar deformation signal often correlate with the most severe structural damage. Prioritizing high-deformation zones can save critical response time.",
+        "best_choice": true
+      },
+      {
+        "text": "The capital city center (highest population, but lower deformation signal)",
+        "feedback": "Reasonable instinct, but not always optimal. Population density matters, but radar deformation data helps identify where damage is most severe. Combining both factors is the ideal real-world approach.",
+        "best_choice": false
+      },
+      {
+        "text": "Wait for satellite confirmation before moving any teams",
+        "feedback": "Waiting has a cost — every hour matters in disaster response. NISAR's rapid revisit capability means data is available quickly enough to act on immediately.",
+        "best_choice": false
+      }
+    ]
+  },
+  "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
+  "caveat": "Visual comparison of quicklook images, not a validated damage map. Scene covers the central-north coast; Caracas is outside the frame."
+}

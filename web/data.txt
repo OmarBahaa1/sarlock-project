@@ -1,0 +1,86 @@
+Venezuela: 
+
+after: {file: 'after.png', date: '2026-06-29', granule_id: 'NISAR_L2_PR_GCOV_024_054_D_083_4005_DHDH_A_20260629T230235_20260629T230309_P05023_N_F_J_001'}
+
+bbox: {west: -69.87367, south: 9.5375, east: -67.11969, north: 12.20739}
+
+before: {file: 'before.png', date: '2026-06-17', granule_id: 'NISAR_L2_PR_GCOV_023_054_D_083_4005_DHDH_A_20260617T230235_20260617T230310_P05023_N_F_J_001'}
+
+caveat: "Visual comparison of quicklook images, not a validated damage map. Scene covers the central-north coast; Caracas is outside the frame."
+
+change: "change.png"
+
+
+title: "Venezuela Earthquake"
+
+
+correct_option: 1
+
+credit: "NISAR (NASA/ISRO), distributed by ASF DAAC"
+
+
+
+event_date: "2026-06-24"
+
+event_type: "earthquake"
+
+hints: (2) ["Look closely at the pattern — it doesn't follow a river or coastline shape.", "This region sits along an active fault line on Venezuela's northern coast."]
+
+id: "case-01"
+
+location: {name: 'Northern Coast, Venezuela', lat: 10.44, lng: -68.5}
+
+magnitude: 7.5
+
+
+question: "What caused this change on Earth's surface?"
+options: (4) ['Flood', 'Earthquake', 'Wildfire', 'Urban Construction']
+
+decision: {scenario: "You're part of a disaster response team. Using the… send rescue teams. Where do you send them first?", choices: Array(3)}
+
+story: {summary: 'On June 24, 2026, a powerful magnitude 7.5 earthqu…t damage across the Carabobo and Yaracuy regions.', stats: Array(3), nisar_insight: "NISAR's L-band radar can detect ground surface cha…ke that occurred days before and after the event.", looking_forward: 'Because NISAR revisits the same location roughly e…ly-warning systems in seismically active regions.'}
+
+
+
+
+
+
+
+
+ 
+
+ohio
+ 
+after: {file: 'after.png', date: '2026-08-22', granule_id: 'NISAR_L2_PR_GCOV_028_127_D_068_4005_DHDH_A_20260822T002541_20260822T002616_P05023_N_F_J_001'}
+
+bbox: {west: -84.8, south: 40, east: -83.6, north: 40.9}
+
+before: {file: 'before.png', date: '2026-07-17', granule_id: 'NISAR_L2_PR_GCOV_025_127_D_068_4005_DHDH_A_20260717T002543_20260717T002618_P05023_N_F_J_001'}
+
+caveat: "Visual comparison of quicklook images, not a validated flood extent map. The 33-day gap between the before and after acquisitions means some of the visible change may reflect normal seasonal vegetation or soil moisture shifts in addition to flood impact."
+
+change: "change.png"
+
+correct_option: 0
+
+credit: "NISAR (NASA/ISRO), distributed by ASF DAAC"
+
+decision: {scenario: "You're coordinating emergency response as the floo… you focus your limited water-rescue teams first?", choices: Array(3)}
+
+event_date: "2026-08-19"
+
+event_type: "flood"
+
+hints: (2) ["Look at the widespread color shift across low-lyin…t isn't a sharp line like a fault or a burn scar.", 'This region received 4 to 7 inches of rainfall in under 24 hours, causing rivers to overflow.']
+
+id: "case-02"
+
+location: {name: 'West-Central Ohio, USA', lat: 40.5, lng: -84.2}
+
+options: (4) ['Flood', 'Earthquake', 'Wildfire', 'Urban Construction']
+
+question: "What caused this change on Earth's surface?"
+
+story: {summary: 'On August 19-20, 2026, a cluster of slow-moving th…scues in towns like Wapakoneta and Bellefontaine.', stats: Array(3), nisar_insight: "NISAR's radar signal changes noticeably over satur…e conditions that usually accompany heavy storms.", looking_forward: "Because NISAR can see through clouds and rain, it'…cisely, rather than waiting for weather to clear."}
+
+title: "Ohio Floods"

@@ -1,0 +1,58 @@
+{
+    "id": "case-03",
+    "title": "Kazakhstan Wildfires",
+    "location": { "name": "Akmola Region, Kazakhstan", "lat": 51.2, "lng": 70.2 },
+    "event_type": "wildfire",
+    "event_date": "2026-07-14",
+    "bbox": { "west": 69.0, "south": 50.5, "east": 71.5, "north": 52.0 },
+    "before": {
+      "file": "before.png",
+      "date": "2026-07-06",
+      "granule_id": "NISAR_L2_PR_GCOV_024_150_D_062_2005_DHDH_A_20260706T143939_20260706T144015_P05023_N_F_J_001"
+    },
+    "after": {
+      "file": "after.png",
+      "date": "2026-07-18",
+      "granule_id": "NISAR_L2_PR_GCOV_025_150_D_062_2005_DHDH_A_20260718T143939_20260718T144014_P05023_N_F_J_001"
+    },
+    "change": "change.png",
+    "question": "What caused this change on Earth's surface?",
+    "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
+    "correct_option": 2,
+    "hints": [
+      "Switch to the Radar Difference view: it highlights where the radar signal changed the most.",
+      "This region was hit by an intense heatwave, drying out grasslands and steppe vegetation."
+    ],
+    "story": {
+      "summary": "Starting July 14, 2026, a severe heatwave combined with dry thunderstorms ignited multiple wildfires across Kazakhstan's state forest land, including a major fire in the Borodulikha district of the Abai region. Hundreds of emergency personnel, vehicles, and aircraft fought the flames, and people from nearby areas, including children from a youth camp, were evacuated.",
+      "stats": [
+        { "label": "Event start", "value": "14 Jul 2026" },
+        { "label": "Region", "value": "Akmola / Abai, Kazakhstan" },
+        { "label": "Radar pair gap", "value": "12 days" }
+      ],
+      "nisar_insight": "Burned vegetation and scorched soil reflect radar signals differently than healthy grassland or forest, which can leave a distinct signature in NISAR data.",
+      "looking_forward": "Because smoke often blocks optical satellites, NISAR's radar can still image the ground through it. That can help firefighting teams map burned areas quickly and decide where to focus containment."
+    },
+    "decision": {
+      "scenario": "You're coordinating wildfire containment resources. Using the radar change map, where do you direct firefighting crews and water-dropping aircraft first?",
+      "choices": [
+        {
+          "text": "The areas with the strongest radar change, likely the most severely burned zones",
+          "feedback": "Reasonable call. Strong radar change often marks heavily affected areas, but containing the fire's edge, not just the burned core, is just as critical to stop it from spreading.",
+          "best_choice": false
+        },
+        {
+          "text": "The edges of the change pattern, to stop the fire from spreading further",
+          "feedback": "Smart instinct. Containing the edges is critical. Combining it with the radar view of the most affected zones gives the fullest picture for allocating resources.",
+          "best_choice": true
+        },
+        {
+          "text": "Wait for the smoke to clear and use regular satellite photos instead",
+          "feedback": "Waiting costs valuable time during an active wildfire. Radar can image the ground through smoke, giving responders a head start while the fire is still burning.",
+          "best_choice": false
+        }
+      ]
+    },
+    "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
+    "caveat": "Visual comparison of quicklook images, not a validated burn-extent map. The wide area of radar change may partly reflect differences in cloud cover between the two acquisition dates, as well as the broader regional drought conditions, and not only the burned areas themselves."
+  }

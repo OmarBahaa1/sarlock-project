@@ -1,0 +1,72 @@
+[
+  {
+    "file": "before.png",
+    "granule_id": "NISAR_L2_PR_GCOV_024_150_D_062_2005_DHDH_A_20260706T143939_20260706T144015_P05023_N_F_J_001",
+    "start_time": "2026-07-06T14:39:39Z",
+    "stop_time": "2026-07-06T14:40:15Z",
+    "flight_direction": "DESCENDING",
+    "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_024_150_D_062_2005_DHDH_A_20260706T143939_20260706T144015_P05023_N_F_J_001/NISAR_L2_PR_GCOV_024_150_D_062_2005_DHDH_A_20260706T143939_20260706T144015_P05023_N_F_J_001_LATLON.png",
+    "footprint": {
+      "coordinates": [
+        [
+          [
+            68.97385,
+            53.78372
+          ],
+          [
+            67.61652,
+            51.68042
+          ],
+          [
+            71.09096,
+            50.77923
+          ],
+          [
+            72.58869,
+            52.8412
+          ],
+          [
+            68.97385,
+            53.78372
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    }
+  },
+  {
+    "file": "after.png",
+    "granule_id": "NISAR_L2_PR_GCOV_025_150_D_062_2005_DHDH_A_20260718T143939_20260718T144014_P05023_N_F_J_001",
+    "start_time": "2026-07-18T14:39:39Z",
+    "stop_time": "2026-07-18T14:40:14Z",
+    "flight_direction": "DESCENDING",
+    "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_025_150_D_062_2005_DHDH_A_20260718T143939_20260718T144014_P05023_N_F_J_001/NISAR_L2_PR_GCOV_025_150_D_062_2005_DHDH_A_20260718T143939_20260718T144014_P05023_N_F_J_001_LATLON.png",
+    "footprint": {
+      "coordinates": [
+        [
+          [
+            68.94298,
+            53.73954
+          ],
+          [
+            67.62319,
+            51.693
+          ],
+          [
+            71.09872,
+            50.79157
+          ],
+          [
+            72.55515,
+            52.79789
+          ],
+          [
+            68.94298,
+            53.73954
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    }
+  }
+]

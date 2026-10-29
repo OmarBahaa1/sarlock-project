@@ -1,58 +1,66 @@
 {
-    "id": "case-02",
-    "title": "Ohio Floods",
-    "location": { "name": "West-Central Ohio, USA", "lat": 40.5, "lng": -84.2 },
-    "event_type": "flood",
-    "event_date": "2026-08-19",
-    "bbox": { "west": -84.8, "south": 40.0, "east": -83.6, "north": 40.9 },
-    "before": {
-      "file": "before.png",
-      "date": "2026-07-17",
-      "granule_id": "NISAR_L2_PR_GCOV_025_127_D_068_4005_DHDH_A_20260717T002543_20260717T002618_P05023_N_F_J_001"
-    },
-    "after": {
-      "file": "after.png",
-      "date": "2026-08-22",
-      "granule_id": "NISAR_L2_PR_GCOV_028_127_D_068_4005_DHDH_A_20260822T002541_20260822T002616_P05023_N_F_J_001"
-    },
-    "change": "change.png",
-    "question": "What caused this change on Earth's surface?",
-    "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
-    "correct_option": 0,
-    "hints": [
-      "Look at the widespread color shift across low-lying farmland — it isn't a sharp line like a fault or a burn scar.",
-      "This region received 4 to 7 inches of rainfall in under 24 hours, causing rivers to overflow."
+  "id": "case-02",
+  "title": "Ohio Floods",
+  "location": { "name": "West-Central Ohio, USA", "lat": 40.5, "lng": -84.2 },
+  "event_type": "flood",
+  "event_date": "2026-08-19",
+  "bbox": { "west": -84.8, "south": 40.0, "east": -83.6, "north": 40.9 },
+  "before": {
+    "file": "before.png",
+    "date": "2026-07-17",
+    "granule_id": "NISAR_L2_PR_GCOV_025_127_D_068_4005_DHDH_A_20260717T002543_20260717T002618_P05023_N_F_J_001"
+  },
+  "after": {
+    "file": "after.png",
+    "date": "2026-08-22",
+    "granule_id": "NISAR_L2_PR_GCOV_028_127_D_068_4005_DHDH_A_20260822T002541_20260822T002616_P05023_N_F_J_001"
+  },
+  "change": "change.png",
+  "change_caption": "Red: brighter in the BEFORE image. Cyan: brighter in the AFTER image. Gray/white: little change. Black: no data. This compares image brightness, not a measured flood extent.",
+  "data_level": "browse",
+  "radar_explainer": {
+    "mode_code": "DHDH",
+    "channels": ["HH", "HV"],
+    "what_radar_sees": "Calm open water reflects the radar signal away from the satellite and looks dark, while flooded vegetation or buildings can bounce it back strongly and look bright. Radar also works through clouds and rain, which is why it is useful during storms.",
+    "polarization_note": "The product contains HH and HV channels. The quicklook image does not tell us which channel it displays, so we make no polarization claim for this view."
+  },
+  "question": "What caused this change on Earth's surface?",
+  "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
+  "correct_option": 0,
+  "hints": [
+    "Switch to the Radar Difference view: it highlights where the radar signal changed the most.",
+    "Heavy rain fell over a short time here, the kind of storm that can push creeks and rivers out of their banks."
+  ],
+  "story": {
+    "summary": "On August 19-20, 2026, heavy thunderstorms dropped several inches of rain on parts of Ohio. The National Weather Service in Wilmington reported 3 to 6 inches in Shelby and Logan counties and 4 to 7 inches in the heaviest areas of Franklin and Licking counties. Local media reported more than a dozen swift-water rescues.",
+    "stats": [
+      { "label": "Rain, Shelby & Logan counties", "value": "3 to 6 in" },
+      { "label": "Rain, heaviest areas (Franklin & Licking)", "value": "4 to 7 in" },
+      { "label": "Swift-water rescues (NBC4)", "value": "More than a dozen" }
     ],
-    "story": {
-      "summary": "On August 19-20, 2026, a cluster of slow-moving thunderstorms dropped 3 to 7 inches of rain across west-central Ohio in under a day. Rivers and creeks in Auglaize, Logan, Shelby, and surrounding counties overflowed their banks, causing widespread flash flooding, road closures, and water rescues in towns like Wapakoneta and Bellefontaine.",
-      "stats": [
-        { "label": "Rainfall", "value": "Up to 7 in / 24 hrs" },
-        { "label": "Counties affected", "value": "10+" },
-        { "label": "Response", "value": "Multiple water rescues" }
-      ],
-      "nisar_insight": "NISAR's radar signal changes noticeably over saturated soil and standing water, since water reflects radar differently than dry land. This lets scientists map flood extent even under cloud cover — exactly the conditions that usually accompany heavy storms.",
-      "looking_forward": "Because NISAR can see through clouds and rain, it's especially valuable during active storm systems — when optical satellites are blind. Rapid flood-extent mapping can help emergency teams target water rescues and road closures precisely, rather than waiting for weather to clear."
-    },
-    "decision": {
-      "scenario": "You're coordinating emergency response as the floodwaters rise. Using the radar change map, where do you focus your limited water-rescue teams first?",
-      "choices": [
-        {
-          "text": "The areas showing the strongest radar signal change (likely deepest water)",
-          "feedback": "Good call. Strong radar change over farmland or low-lying areas often indicates standing water — prioritizing these zones helps target rescues where they're needed most.",
-          "best_choice": true
-        },
-        {
-          "text": "The town centers, regardless of what the radar shows",
-          "feedback": "Population centers matter, but ignoring the radar data means potentially missing flooded rural areas where people can be just as stranded — combining both is the stronger approach.",
-          "best_choice": false
-        },
-        {
-          "text": "Wait until the rain fully stops to send teams",
-          "feedback": "Waiting costs valuable time. NISAR's ability to see through clouds and rain means flood extent can be mapped while the storm is still active, enabling faster response.",
-          "best_choice": false
-        }
-      ]
-    },
-    "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
-    "caveat": "Visual comparison of quicklook images, not a validated flood extent map. The 33-day gap between the before and after acquisitions means some of the visible change may reflect normal seasonal vegetation or soil moisture shifts in addition to flood impact."
-  }
+    "nisar_insight": "Water changes how radar signal bounces back, so a flooded area can look different from the same place on a dry day. NISAR's radar also works through clouds and rain, so it can image the ground during the storms that cause floods. Here, a before image (17 July) and an after image (22 August) are compared.",
+    "looking_forward": "Because radar sees through clouds and rain, it is valuable when optical satellites are blind. With a revisit of about 12 days, a single NISAR pass can miss the flood peak, so future flood mapping would combine NISAR with other satellites and ground reports."
+  },
+  "decision": {
+    "scenario": "You're coordinating emergency response as the floodwaters rise. Using the radar change map, where do you focus your limited water-rescue teams first?",
+    "choices": [
+      {
+        "text": "The areas showing the strongest radar signal change",
+        "feedback": "A sensible start. Strong radar change over low-lying land can point to standing water, so it helps decide where to look first. It does not show water depth or where people are stranded, so teams still need field reports to confirm.",
+        "best_choice": true
+      },
+      {
+        "text": "The town centers, regardless of what the radar shows",
+        "feedback": "Population centers matter, but ignoring the radar data risks missing flooded rural areas where people can be just as stranded. Combining both is the stronger approach.",
+        "best_choice": false
+      },
+      {
+        "text": "Wait until the rain fully stops to send teams",
+        "feedback": "Waiting costs valuable time during a flood. Radar can see through rain, but NISAR passes only about every 12 days, so the first response relies on emergency calls and field reports while satellite data helps with planning and mapping.",
+        "best_choice": false
+      }
+    ]
+  },
+  "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
+  "caveat": "Visual comparison of quicklook images, not a validated flood extent map. The two acquisitions are 36 days apart (17 July and 22 August), so some of the visible change may come from normal seasonal changes in vegetation or soil moisture. The after image was taken 2-3 days after the storm, so some floodwater may already have drained. The scene covers west-central Ohio; the heaviest-rain areas around Franklin and Licking counties lie outside it."
+}

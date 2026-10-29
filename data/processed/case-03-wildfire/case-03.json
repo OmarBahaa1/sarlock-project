@@ -1,58 +1,66 @@
 {
-    "id": "case-03",
-    "title": "Kazakhstan Wildfires",
-    "location": { "name": "Akmola Region, Kazakhstan", "lat": 51.2, "lng": 70.2 },
-    "event_type": "wildfire",
-    "event_date": "2026-07-14",
-    "bbox": { "west": 69.0, "south": 50.5, "east": 71.5, "north": 52.0 },
-    "before": {
-      "file": "before.png",
-      "date": "2026-07-06",
-      "granule_id": "NISAR_L2_PR_GCOV_024_150_D_062_2005_DHDH_A_20260706T143939_20260706T144015_P05023_N_F_J_001"
-    },
-    "after": {
-      "file": "after.png",
-      "date": "2026-07-18",
-      "granule_id": "NISAR_L2_PR_GCOV_025_150_D_062_2005_DHDH_A_20260718T143939_20260718T144014_P05023_N_F_J_001"
-    },
-    "change": "change.png",
-    "question": "What caused this change on Earth's surface?",
-    "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
-    "correct_option": 2,
-    "hints": [
-      "Switch to the Radar Difference view: it highlights where the radar signal changed the most.",
-      "This region was hit by an intense heatwave, drying out grasslands and steppe vegetation."
+  "id": "case-03",
+  "title": "Kazakhstan Wildfires",
+  "location": { "name": "Akmola Region, Kazakhstan", "lat": 51.2, "lng": 70.2 },
+  "event_type": "wildfire",
+  "event_date": "2026-07-14",
+  "bbox": { "west": 69.0, "south": 50.5, "east": 71.5, "north": 52.0 },
+  "before": {
+    "file": "before.png",
+    "date": "2026-07-06",
+    "granule_id": "NISAR_L2_PR_GCOV_024_150_D_062_2005_DHDH_A_20260706T143939_20260706T144015_P05023_N_F_J_001"
+  },
+  "after": {
+    "file": "after.png",
+    "date": "2026-07-18",
+    "granule_id": "NISAR_L2_PR_GCOV_025_150_D_062_2005_DHDH_A_20260718T143939_20260718T144014_P05023_N_F_J_001"
+  },
+  "change": "change.png",
+  "change_caption": "Red: brighter in the BEFORE image. Cyan: brighter in the AFTER image. Gray/white: little change. Black: no data. Large bright patches may be strong reflectors or other surface changes, not necessarily burn.",
+  "data_level": "browse",
+  "radar_explainer": {
+    "mode_code": "DHDH",
+    "channels": ["HH", "HV"],
+    "what_radar_sees": "Fire removes leaves and thin branches, which changes how the radar signal scatters inside vegetation. Cross-polarized (HV) signal is generally sensitive to vegetation structure, so burn scars are often expected to show up there.",
+    "polarization_note": "The product contains HH and HV channels. The quicklook image does not tell us which channel it displays, so we make no polarization claim for this view."
+  },
+  "question": "What caused this change on Earth's surface?",
+  "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
+  "correct_option": 2,
+  "hints": [
+    "Switch to the Radar Difference view: it highlights where the radar signal changed the most.",
+    "Dry grass and shrubs burn fast in hot, dry summer weather, and fire changes the vegetation the radar is sensitive to."
+  ],
+  "story": {
+    "summary": "Wildfires broke out in Kazakhstan in mid-July 2026, starting around July 14. This NISAR pair covers part of the Akmola region and was taken on July 6 and July 18, so it brackets that start date.",
+    "stats": [
+      { "label": "Event start", "value": "14 Jul 2026" },
+      { "label": "Scene region", "value": "Akmola, Kazakhstan" },
+      { "label": "Radar pair gap", "value": "12 days" }
     ],
-    "story": {
-      "summary": "Starting July 14, 2026, a severe heatwave combined with dry thunderstorms ignited multiple wildfires across Kazakhstan's state forest land, including a major fire in the Borodulikha district of the Abai region. Hundreds of emergency personnel, vehicles, and aircraft fought the flames, and people from nearby areas, including children from a youth camp, were evacuated.",
-      "stats": [
-        { "label": "Event start", "value": "14 Jul 2026" },
-        { "label": "Region", "value": "Akmola / Abai, Kazakhstan" },
-        { "label": "Radar pair gap", "value": "12 days" }
-      ],
-      "nisar_insight": "Burned vegetation and scorched soil reflect radar signals differently than healthy grassland or forest, which can leave a distinct signature in NISAR data.",
-      "looking_forward": "Because smoke often blocks optical satellites, NISAR's radar can still image the ground through it. That can help firefighting teams map burned areas quickly and decide where to focus containment."
-    },
-    "decision": {
-      "scenario": "You're coordinating wildfire containment resources. Using the radar change map, where do you direct firefighting crews and water-dropping aircraft first?",
-      "choices": [
-        {
-          "text": "The areas with the strongest radar change, likely the most severely burned zones",
-          "feedback": "Reasonable call. Strong radar change often marks heavily affected areas, but containing the fire's edge, not just the burned core, is just as critical to stop it from spreading.",
-          "best_choice": false
-        },
-        {
-          "text": "The edges of the change pattern, to stop the fire from spreading further",
-          "feedback": "Smart instinct. Containing the edges is critical. Combining it with the radar view of the most affected zones gives the fullest picture for allocating resources.",
-          "best_choice": true
-        },
-        {
-          "text": "Wait for the smoke to clear and use regular satellite photos instead",
-          "feedback": "Waiting costs valuable time during an active wildfire. Radar can image the ground through smoke, giving responders a head start while the fire is still burning.",
-          "best_choice": false
-        }
-      ]
-    },
-    "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
-    "caveat": "Visual comparison of quicklook images, not a validated burn-extent map. The wide area of radar change may partly reflect differences in cloud cover between the two acquisition dates, as well as the broader regional drought conditions, and not only the burned areas themselves."
-  }
+    "nisar_insight": "Burned vegetation and scorched soil scatter radar signal differently from healthy grassland or forest, which can leave a signature in NISAR data. Radar is not blocked by smoke or clouds, so it can image the ground while a fire is still burning.",
+    "looking_forward": "Radar can map burned areas even under smoke, which helps teams decide where to focus after a fire. With a revisit of about 12 days, NISAR suits burn-scar mapping and recovery tracking better than real-time fire fighting."
+  },
+  "decision": {
+    "scenario": "You're coordinating wildfire containment resources. Using the radar change map, where do you direct firefighting crews and water-dropping aircraft first?",
+    "choices": [
+      {
+        "text": "The areas with the strongest radar change, which may be the most affected zones",
+        "feedback": "Reasonable call. Strong radar change can mark heavily affected areas, but containing the edge of the fire, not just the burned core, is just as critical to stop it from spreading.",
+        "best_choice": false
+      },
+      {
+        "text": "The edges of the change pattern, to stop the fire from spreading further",
+        "feedback": "Smart instinct. Containing the edges is critical. Combining it with the radar view of the most affected zones gives the fullest picture for allocating resources.",
+        "best_choice": true
+      },
+      {
+        "text": "Wait for the smoke to clear and use regular satellite photos instead",
+        "feedback": "Waiting costs valuable time during an active wildfire. Radar can image the ground through smoke, but with a revisit of about 12 days it supports mapping and planning, while crews on the ground need live reports.",
+        "best_choice": false
+      }
+    ]
+  },
+  "credit": "NISAR (NASA/ISRO), distributed by ASF DAAC",
+  "caveat": "Visual comparison of quicklook images, not a validated burn-extent map. The two images look very similar, and the visible change may come from other causes such as soil moisture or vegetation differences between the two dates, not only from burned areas. We have not confirmed that the reported fires fall inside this exact scene."
+}

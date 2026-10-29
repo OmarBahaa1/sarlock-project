@@ -17,39 +17,47 @@
     "granule_id": "NISAR_L2_PR_GCOV_024_054_D_083_4005_DHDH_A_20260629T230235_20260629T230309_P05023_N_F_J_001"
   },
   "change": "change.png",
+  "change_caption": "Red: brighter in the BEFORE image. Cyan: brighter in the AFTER image. Gray/white: little change. Black: no data. This compares image brightness, not measured ground motion.",
+  "data_level": "browse",
+  "radar_explainer": {
+    "mode_code": "DHDH",
+    "channels": ["HH", "HV"],
+    "what_radar_sees": "An earthquake can shift the ground, damage buildings and trigger landslides. Each of these changes how the radar signal bounces back, and comparing two dates can show where. Measuring centimeter-scale ground motion needs interferometry (InSAR), which this quicklook comparison does not show.",
+    "polarization_note": "The product contains HH and HV channels. The quicklook image does not tell us which channel it displays, so we make no polarization claim for this view."
+  },
   "question": "What caused this change on Earth's surface?",
   "options": ["Flood", "Earthquake", "Wildfire", "Urban Construction"],
   "correct_option": 1,
   "hints": [
-    "Look closely at the pattern — it doesn't follow a river or coastline shape.",
-    "This region sits along an active fault line on Venezuela's northern coast."
+    "Switch to the Radar Difference view: it highlights where the radar signal changed the most.",
+    "This region lies on an active plate boundary, where the ground can suddenly slip and release energy."
   ],
   "story": {
-    "summary": "On June 24, 2026, a powerful magnitude 7.5 earthquake (preceded by a magnitude 7.2 foreshock just seconds earlier) struck Venezuela's northern coast near Yumare, in Yaracuy state. The shaking was strongly felt in Caracas and caused significant damage across the Carabobo and Yaracuy regions.",
+    "summary": "On June 24, 2026, a magnitude 7.5 earthquake struck Venezuela's northern coast, about 38 seconds after a magnitude 7.2 shock. The shaking was strongly felt in Caracas and caused significant damage across the Carabobo and Yaracuy regions.",
     "stats": [
-      { "label": "Magnitude", "value": "7.5 Mw" },
-      { "label": "Depth", "value": "~20 km" },
-      { "label": "Casualties", "value": "164+ reported" }
+      { "label": "Magnitude (main shock)", "value": "7.5 Mw" },
+      { "label": "Depth (M7.2 shock)", "value": "~20 km" },
+      { "label": "Deaths reported by 26 Jun", "value": "589" }
     ],
-    "nisar_insight": "NISAR's L-band radar can detect ground surface changes of just a few centimeters, even through cloud cover — capturing shifts in terrain caused by the earthquake that occurred days before and after the event.",
-    "looking_forward": "Because NISAR revisits the same location roughly every 12 days, early ground deformation — a warning sign before major earthquakes or aftershocks — can be tracked and used to improve early-warning systems in seismically active regions."
+    "nisar_insight": "NISAR's L-band radar sees through clouds and works day and night, so it can image a disaster zone even when optical satellites cannot. Here, two images taken 12 days apart (17 and 29 June) bracket the earthquake, and the difference map shows where the radar signal changed.",
+    "looking_forward": "NISAR revisits the same area roughly every 12 days. With processed data and interferometry, future studies could map ground deformation after earthquakes and help responders find the hardest-hit areas faster. Earthquakes themselves cannot be predicted."
   },
   "decision": {
-    "scenario": "You're part of a disaster response team. Using the radar deformation map, you have limited resources to send rescue teams. Where do you send them first?",
+    "scenario": "You're part of a disaster response team. Using the radar change map, you have limited resources to send rescue teams. Where do you send them first?",
     "choices": [
       {
-        "text": "The coastal area with the strongest signal change (highest deformation)",
-        "feedback": "Good call. Areas with the strongest radar deformation signal often correlate with the most severe structural damage. Prioritizing high-deformation zones can save critical response time.",
+        "text": "The coastal area with the strongest signal change in the radar map",
+        "feedback": "A sensible start. Strong radar change can point to places where the ground or buildings were disturbed, so it helps decide where to look first. It is not a damage map though, so teams still need on-the-ground reports to confirm.",
         "best_choice": true
       },
       {
-        "text": "The capital city center (highest population, but lower deformation signal)",
-        "feedback": "Reasonable instinct, but not always optimal. Population density matters, but radar deformation data helps identify where damage is most severe. Combining both factors is the ideal real-world approach.",
+        "text": "The most densely populated city in the scene, even where the radar change is weaker",
+        "feedback": "Reasonable instinct. Population density matters because more people means more potential victims. The strongest approach combines radar change, population data and local reports.",
         "best_choice": false
       },
       {
-        "text": "Wait for satellite confirmation before moving any teams",
-        "feedback": "Waiting has a cost — every hour matters in disaster response. NISAR's rapid revisit capability means data is available quickly enough to act on immediately.",
+        "text": "Wait for more satellite data before moving any teams",
+        "feedback": "Waiting has a cost, since every hour matters in rescue. NISAR revisits about every 12 days, so it supports planning and damage mapping, while the first response relies on field reports and faster sources.",
         "best_choice": false
       }
     ]

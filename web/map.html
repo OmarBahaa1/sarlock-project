@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARlock</title>
+    <link rel="icon" type="image/png" href="assets/images/logo_nobg_circular.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="mapandmission.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="">
+        </div>
+        <div class="pages">
+            <a href="index.html">Home</a>
+            <a href="map.html" class="chosen">Explore Mode</a>
+            <a href="">Missiens Mode</a>
+        </div>
+        <div class="git">
+            <a href="https://github.com/OmarBahaa1/sarlock-project.git" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="leftside">
+            <div class="map">
+                <div class="loc venz"></div>
+                <div class="loc ohio"></div>
+                <div class="loc kaza"></div>
+                <div class="loc place4"></div>
+                <div class="loc place5"></div>
+                <div class="hidden hidvenz"><p>Venezuella</p></div>
+                <div class="hidden hidohio"><p>Ohio</p></div>
+                <div class="hidden hidkaza"><p>kazakhstan</p></div>
+                <div class="hidden hidplace4"><p>place4</p></div>
+                <div class="hidden hidplace5"><p>place5</p></div>
+            </div>
+            <div class="locations">
+                <p class="locbtn venzbtn">Venezuela</p>
+                <p class="locbtn ohiobtn">Ohio</p>
+                <p class="locbtn kazabtn">kazakhstan</p>
+                <p class="locbtn place4btn">place 4</p>
+                <p class="locbtn place5btn">place 5</p>
+            </div>
+        </div>
+        <div class="map_side">
+            <div class="char"><img id="narrator-img" src="assets/narrator/greeting_nobg.png" alt="Zack"></div>
+            <div class="levelbox">
+                <p>Your Level is: <span class="level"></span></p>
+                <div class="levelslider">
+                    <div class="innerlevel"></div>
+                </div>
+            </div>
+            <div class="text">
+                <p id="narrator-text" style="white-space: pre-wrap;"></p>
+                <a href="map.html" id="start-btn" style="display: none;">Start Mission 🚀</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

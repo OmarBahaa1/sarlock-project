@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARlock</title>
+    <link rel="icon" type="image/png" href="assets/images/logo_nobg_circular.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="mapandmission.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="">
+        </div>
+        <div class="pages">
+            <a href="index.html">Home</a>
+            <a href="map.html">Explore Mode</a>
+            <a href="" class="chosen">Missiens Mode</a>
+        </div>
+        <div class="git">
+            <a href="https://github.com/OmarBahaa1/sarlock-project.git" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </nav>
+    <div class="container heading">
+        <h1 class="case"></h1>
+        <h1 id="title"></h1>
+        <h2 id="date"></h2>
+        <!-- <p id="desc"></p> -->
+    </div>
+    <div class="compare container">
+
+        <div class="container">
+            <div id="resultpoint" class="hidden"></div>
+            <div class="images">
+                <div class="compare-slider">
+                    <div class="img-before">
+                        <img src="" alt="Before">
+                        <span class="label label-before">BEFORE</span>
+                    </div>
+                    <div class="img-after">
+                        <img src="" alt="After">
+                        <span class="label label-after">AFTER</span>
+                    </div>
+                    <div class="slider-handle">
+                        <div class="slider-line"></div>
+                        <div class="slider-circle">◄►</div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="mission_side">
+                <img src="assets/narrator/explaining_nobg.png" alt="Zack" id="lablabla">
+                <div class="content"></div>
+
+                <div class="game-hud">
+                    <div class="attempts" id="attemptsBox"></div>
+                    <button class="guess-btn" id="guessBtn">🎯 Mark the change</button>
+                    <p class="hint-box hidden" id="hintBox"></p>
+                    <p class="result-line hidden" id="resultLine"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
